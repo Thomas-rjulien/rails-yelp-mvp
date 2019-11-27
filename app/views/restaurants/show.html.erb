@@ -1,0 +1,12 @@
+<h1>Please find details relevant to <%= @restaurant.name %> below:</h1>
+<h2>Address: <%= @restaurant.address %></h2>
+<h2>Cuisine: <%= @restaurant.category %></h2>
+<ul>
+  <% @restaurant.reviews.each do |review|%>
+  <li>Review rating: <%= review.rating  %><br>
+  Review: <%= review.content %>
+  </li>
+<% end %>
+</ul>
+<p><%= link_to "add a rating", new_restaurant_review_path(@restaurant) %></p>
+<p><%= link_to "back to index", restaurants_path %></p>
